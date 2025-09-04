@@ -17,7 +17,7 @@ export const HomeView = () => {
   return (
     <div className="p-4 flex flex-col gap-y-4">
         Logged in as {session.user.name}
-        <Button className="ml-2" variant="destructive" onClick={()=>{
+        <Button className="ml-2" onClick={()=>{
           authClient.signOut({fetchOptions: {onSuccess:()=>router.push("/sign-in")}})
         }}>Sign out</Button>
       </div>
