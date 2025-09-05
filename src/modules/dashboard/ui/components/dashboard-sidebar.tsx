@@ -16,8 +16,8 @@ import { BotIcon, StarIcon, VideoIcon } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import { Separator } from "@/components/ui/separator"
-import { cn } from "@/lib/utils"
 import { usePathname } from "next/navigation"
+import DashboardUserButton from "./dashboard-user-button"
 
 const firstSection=[
     {
@@ -73,7 +73,32 @@ const DashboardSidebar = () => {
                     </SidebarMenu>
                 </SidebarGroupContent>
             </SidebarGroup>
+            <div className="px-4 py-2">
+                <Separator className="opacity-10 text-[#fff]"></Separator>
+            </div>
+            <SidebarGroup>
+                <SidebarGroupContent>
+                    <SidebarMenu>
+                        {secondSection.map((item)=>(
+                            <SidebarMenuItem key={item.href}>
+                                <SidebarMenuButton asChild className="h-10 border-transparent"
+                                isActive={pathname===item.href}
+                                >
+                                    <Link href={item.href}>
+                                        <item.icon className="size-5"></item.icon>
+                                        <span className="text-sm font-medium tracking-tight">{item.label}</span>           
+                                    </Link>
+                                </SidebarMenuButton>
+                            </SidebarMenuItem>
+                        ))}
+                    </SidebarMenu>
+                </SidebarGroupContent>
+            </SidebarGroup>
         </SidebarContent>
+        <SidebarFooter className="text-white">
+            <DashboardUserButton></DashboardUserButton>
+
+        </SidebarFooter>
 
     </Sidebar>
   )
