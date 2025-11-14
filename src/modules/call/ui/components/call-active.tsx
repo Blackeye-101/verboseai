@@ -19,7 +19,7 @@ export const CallActive = ({ onLeave, meetingName }: Props) => {
         </Link>
         <h4 className="text-base">{meetingName}</h4>
       </div>
-      <SpeakerLayout></SpeakerLayout>
+      <SpeakerLayout participantsBarPosition="bottom" />
       <div className="bg-[#101213] rounded-full px-4">
         <CallControls onLeave={onLeave}></CallControls>
       </div>

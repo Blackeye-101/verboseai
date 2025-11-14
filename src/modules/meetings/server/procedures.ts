@@ -14,7 +14,6 @@ import { meetingsInsertSchema, meetingsUpdateSchema } from "../schema";
 import { MeetingStatus } from "../types";
 import { streamVideo } from "@/lib/stream-video";
 import { GenerateAvatarUri } from "@/lib/avatar";
-import { create } from "domain";
 
 export const meetingsRouter = createTRPCRouter({
   generateToken: protectedProcedure.mutation(async ({ ctx }) => {
