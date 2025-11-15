@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { CallControls, SpeakerLayout } from "@stream-io/video-react-sdk";
+import { useMemo } from "react";
 
 interface Props {
   onLeave: () => void;
@@ -19,7 +20,7 @@ export const CallActive = ({ onLeave, meetingName }: Props) => {
         </Link>
         <h4 className="text-base">{meetingName}</h4>
       </div>
-      <SpeakerLayout participantsBarPosition="bottom" />
+      <SpeakerLayout></SpeakerLayout>
       <div className="bg-[#101213] rounded-full px-4">
         <CallControls onLeave={onLeave}></CallControls>
       </div>
