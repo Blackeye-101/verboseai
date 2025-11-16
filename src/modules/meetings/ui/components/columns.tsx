@@ -14,16 +14,8 @@ import {
 
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
-import humanizeDuration from "humanize-duration";
+import { formatDuration } from "@/lib/utils";
 import { format } from "date-fns";
-
-function formatDuration(seconds: number) {
-  return humanizeDuration(seconds * 1000, {
-    largest: 1,
-    round: true,
-    units: ["h", "m", "s"],
-  });
-}
 
 const statusIconMap = {
   upcoming: ClockArrowUpIcon,
